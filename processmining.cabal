@@ -1,0 +1,53 @@
+name:                processmining
+version:             0.1.0.0
+synopsis:            Process Mining algorithms
+description:         Libraries to experiment with process mining
+homepage:            https://github.com/maurotrb/processmining
+license:             BSD3
+license-file:        LICENSE
+author:              Mauro Taraborelli
+maintainer:          mauro@maurotaraborelli.com
+copyright:           © 2015 Mauro Taraborelli
+homepage:            https://github.com/maurotrb/processmining
+bug-reports:         https://github.com/maurotrb/processmining/issues
+category:            Data
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     ProcessMining.Discovery.Alpha
+                     , ProcessMining.Discovery.Footprint
+                     , ProcessMining.Log.SimpleLog
+                     , ProcessMining.Model.PetriNet
+                     , ProcessMining.Model.PetriNet.Graphviz
+  build-depends:       base                 ==4.*
+                     , containers           ==0.5.*
+                     , dlist                ==0.7.*
+                     , multiset             ==0.3.*
+                     , text                 ==1.2.*
+                     , wl-pprint-text       ==1.1.*
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  ghc-options:         -Wall
+
+test-suite             spec
+  type:                exitcode-stdio-1.0
+  main-is:             Spec.hs
+  other-modules:       ProcessMining.Log.SimpleLogSpec
+  build-depends:       base                 ==4.*
+                     , hspec                ==2.1.*
+                     , processmining
+                     , QuickCheck           ==2.8.*
+                     , text                 ==1.2.*
+  hs-source-dirs:      test
+  default-language:    Haskell2010
+  ghc-options:         -Wall
+
+test-suite             doctest
+  type:                exitcode-stdio-1.0
+  main-is:             doctests.hs
+  build-depends:       base                 ==4.*
+                     , doctest              ==0.10.*
+  hs-source-dirs:      test
+  default-language:    Haskell2010
+  ghc-options:         -threaded -Wall
