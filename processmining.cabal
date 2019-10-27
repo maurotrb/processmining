@@ -8,7 +8,6 @@ license-file:        LICENSE
 author:              Mauro Taraborelli
 maintainer:          mauro@maurotaraborelli.com
 copyright:           © 2015 Mauro Taraborelli
-homepage:            https://github.com/maurotrb/processmining
 bug-reports:         https://github.com/maurotrb/processmining/issues
 category:            Data
 build-type:          Simple
